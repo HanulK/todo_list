@@ -1,0 +1,12 @@
+/* 기본 스타일 */
+/* main {
+    text-align: center;
+    vertical-align: center;
+    line-height: 100vh;
+} */
+
+.box{
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
