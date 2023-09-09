@@ -5,9 +5,9 @@ import Box from "./Box";
 function App() {
     return (
         <main>
-            <Box name="rabbit"/>
-            <Box name="carrot"/>
-            <Box name="주황주황"/>
+            <Box name="rabbit" num="1"/>
+            <Box name="carrot" num="2"/>
+            <Box name="주황주황" num="3"/>
         </main>
     );
 }
