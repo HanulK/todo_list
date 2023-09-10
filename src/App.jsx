@@ -45,10 +45,20 @@ function App() {
         [todos]
     );
 
+    const onToggle = useCallback(
+        (id) => {
+            setTodos(
+                todos.map((todo) => 
+                todo.id === id ? {...todo, checked: !todo.checked} : todo)
+            )
+        },
+        [todos]
+    );
+
     return (
         <div>
             <TodoCreate onInsert={onInsert}/>
-            <TodoBoard todoList={todos} onRemove={onRemove}/>
+            <TodoBoard todoList={todos} onRemove={onRemove} onToggle={onToggle}/>
         </div>
     );
 }
