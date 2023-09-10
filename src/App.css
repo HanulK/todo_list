@@ -1,0 +1,61 @@
+/* .boeTEB:hover {
+    background: #63e6be;
+} */
+
+.btn {
+    background: #63e6be;
+    border-width: 0px;
+    height: 3em;
+    width: 3em;
+    border-radius: 1em;
+}
+
+.todo-item {
+    display: flex;
+    padding: 12px;
+    align-items: center;
+}
+
+.content {
+    /* width: 300px; */
+    /* height: 50px; */
+    /* border: 1px solid lightblue; */
+    font-size: 21px;
+    color: #495057;
+    flex: 1;
+}
+
+.check_circle {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    cursor: pointer;
+    background-image: url('/public/unchecked.png');
+    background-size: contain;
+}
+
+.check_circle.off{
+    background-image: url('/public/checked.png');
+    background-size: contain;
+}
+
+.remove {
+    width: 20px;
+    height: 20px;
+    background-image: url('/public/trash.png');
+    background-size: contain;
+}
+
+.input {
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    width: 85%;
+    outline: none;
+    font-size: 18px;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
