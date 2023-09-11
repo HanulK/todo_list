@@ -12,10 +12,12 @@ function TodoCreate({onInsert}) {
     }, [onInsert, todo]);
 
     return (
-        <form className="TodoCreate" onSubmit={onSubmit}>
-        <input type="text" value={todo} className="input" onChange={onChange}/>
-        <button className="btn" type="submit">+</button>
-        </form>
+        <div className="inputArea">
+            <form className="TodoCreate" onSubmit={onSubmit}>
+                <input type="text" value={todo} className="input" placeholder="할 일을 입력하세요." onChange={onChange}/>
+                <button className="btn" type="submit">+</button>
+            </form>
+        </div>
     );
 }
 

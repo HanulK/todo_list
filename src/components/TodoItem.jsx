@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
 
-function TodoItem({todo, onRemove, onToggle}) {
+function TodoItem({todo, onRemove, onToggle, onInsertToggle, onChangeSelectTodo}) {
     const { id, text, checked } = todo;
 
     const checkRM = (id) => {
@@ -14,6 +14,10 @@ function TodoItem({todo, onRemove, onToggle}) {
         <div className="todo-item">
             <div className={cn('check_circle', {off: checked})} onClick={() => onToggle(id)}></div>
             <div className={cn('content', {off: checked})}>{text}</div>
+            <div className="edit" onClick={() => {
+                onChangeSelectTodo(todo);
+                onInsertToggle();
+            }}></div>
             <div className="remove" onClick={() => checkRM(id)}></div>
         </div>
     );

@@ -1,13 +1,9 @@
-/* .boeTEB:hover {
-    background: #63e6be;
-} */
-
 .btn {
     background: #63e6be;
     border-width: 0px;
     height: 3em;
     width: 3em;
-    border-radius: 1em;
+    border-radius: 0.5em;
 }
 
 .todo-item {
@@ -22,7 +18,7 @@
     flex: 1;
 }
 
-.content.off{
+.content.off {
     flex: 1;
     font-size: 21px;
     color: #ced4da;
@@ -40,8 +36,16 @@
     background-size: contain;
 }
 
-.check_circle.off{
+.check_circle.off {
     background-image: url('/public/checked.png');
+    background-size: contain;
+}
+
+.edit {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    background-image: url('/public/pencil.png');
     background-size: contain;
 }
 
@@ -61,4 +65,60 @@
     font-size: 18px;
     box-sizing: border-box;
     margin-right: 10px;
+}
+
+.inputArea {
+    bottom: 20px;
+    width: 100%;
+    position: absolute;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.548);
+}
+
+.edit_input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 15%;
+    border-radius: 0.6em;
+    background-color: white;
+    display: flex;
+}
+
+.edit_area{
+    position: relative;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 50%;
+}
+
+.edit_text {
+    font-size: 18px;
+    width: 80%;
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.close_popup {
+    position: relative;
+    top: 65%;
+    left: -35%;
+    height: 30px;
+    width: 50px;
+    border: 1px solid #dee2e6;
 }
