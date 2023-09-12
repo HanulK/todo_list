@@ -1,3 +1,6 @@
+# Git alias 'hist'
+git config --global alias.hist "log --graph --pretty=format:'%C(yellow)[%h]%C(reset) %C(auto)%ad%C(reset) | %C(auto)%d%C(reset) %n %C(bold black)%an%C(reset) %C(bold black)(%ar)%C(reset) %n %C(bold white)%s%C(reset) %n' --date=short"  
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
