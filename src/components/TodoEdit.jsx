@@ -10,6 +10,7 @@ function TodoEdit({onInsertToggle, selectTodo, onUpdate}) {
     }, [onUpdate, text]);
 
     // useEffect : 2번째 인자에 해당하는 state(selectTodo)가 변할 때만 실행됨
+    // API 통신도 주로 useEffect로 함
     useEffect(() => {
         // 선택된 todo값이 존재하면
         if(selectTodo) {
