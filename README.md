@@ -71,3 +71,39 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# JS -> TS
+
+1. TS 환경 구성
+- NPM 초기화 & package.json 생성 : $npm init -y
+- TS 라이브러리 설치 : $npm i typescript --save-dev or $npm i typescript -D
+- TS 설정 파일 생성 & 기본 값 추가 : package.json과 같은 위치에서 tsconfig.json 파일 생성 및 내용 추가   
+```
+{
+    "compilerOptions": {
+        // js파일도 컴파일 대상 여부
+        "allowJs": true,
+        // tsc로 컴파일 시 변환되는 ES버전
+        "target": "ES5",
+        // 타입스크립트의 결과물이 들어가는 경로 설정
+        "outDir": "./dist",
+        // Promise base 코드 작성 시 Promise를 인식시켜주는 목적
+        "moduleResolution": "Node",
+        // 컴파일 과정에서 사용될 라이브러리 파일 설정
+        "lib": [
+            "ES2015",       // 프로미스 객체를 타입스크립트에서 인식할 수 있도록 하는 라이브러리
+            "DOM",          // dom api를 사용하는 경우 필요
+            "DOM.Iterable"
+        ]
+    },
+    // 프로젝트를 기준으로 어떤 폴더를 대상으로 타입스크립트를 컴파일 시킬 것인지 결정하는 부분
+    "include": [
+        "./src/**/*"
+    ],
+    // 컴파일 대상 제외 옵션
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
+```

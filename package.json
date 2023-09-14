@@ -35,5 +35,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "git config --global alias.hist \"log --graph --pretty=format:'%C(yellow)[%h]%C(reset) %C(auto)%ad%C(reset) | %C(auto)%d%C(reset) %n %C(bold black)%an%C(reset) %C(bold black)(%ar)%C(reset) %n %C(bold white)%s%C(reset) %n' --date=short\"",
+  "main": "index.js",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
