@@ -7,20 +7,15 @@ import TodoEdit from "./components/TodoEdit";
 function App() {
     // 기본값 설정
     // const [todos, setTodos] = useState([]);
-    const [todos, setTodos] = useState([
-        {
-            id: 1,
-            text: '투두리스트 만들기',
-            checked: true,
-        },
-    ]);
+    type item = {id: number; text: string; checked: boolean};
+    const [todos, setTodos] = useState<item[]>([]);
 
     // TodoCreate 안의 onSubmit 함수 안에서 재사용
     // todos 값 추가
-    const nextId = useRef(2);
-    const onInsert = useCallback(
-        (text) => {
-            const todo = {
+    const nextId = useRef<number>(1);
+    const onInsert = useCallback<(text: string) => void>(
+        (text: string) => {
+            const todo: item = {
                 id : nextId.current,
                 text,
                 checked: false
