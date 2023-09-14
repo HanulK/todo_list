@@ -77,7 +77,8 @@ function App() {
             todos.map((todo) => 
             todo.id === id ? {...todo, text : text} : todo
         ));
-    })
+    },
+    [todos])
 
 
     return (

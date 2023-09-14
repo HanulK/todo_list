@@ -85,6 +85,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
         "allowJs": true,
         // tsc로 컴파일 시 변환되는 ES버전
         "target": "ES5",
+        // node_modules/@types/react/index 모듈을 사용하기 위한 추가
+        "esModuleInterop": true,
         // 타입스크립트의 결과물이 들어가는 경로 설정
         "outDir": "./dist",
         // Promise base 코드 작성 시 Promise를 인식시켜주는 목적
@@ -94,7 +96,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
             "ES2015",       // 프로미스 객체를 타입스크립트에서 인식할 수 있도록 하는 라이브러리
             "DOM",          // dom api를 사용하는 경우 필요
             "DOM.Iterable"
-        ]
+        ],
+        // ''--jsx' 플래그를 제공하지 않으면 JSX를 사용할 수 없습니다' 해결
+        "jsx": "react-jsx"
     },
     // 프로젝트를 기준으로 어떤 폴더를 대상으로 타입스크립트를 컴파일 시킬 것인지 결정하는 부분
     "include": [
@@ -107,3 +111,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     ]
 }
 ```
+- '--jsx' 플래그를 제공하지 않으면 JSX를 사용할 수 없습니다.
+    - VScode에서의 TS 버전과 Global 환경에 설치된 TS버전이 달라서 발생
+    - typescript 설치 여부 확인 : $npm list -g typescript / 버전이 나오면 설치된 것, 아니라면 설치 필요
+    - typescript 설치 : $npm -i g typescript
+    - Global NPM path 확인 : $npm root -g
+    - VScode의 setting.json 열어 typescript 버전 매칭 : {"typescript.tsdk":"[$GLOBAL_NPM_PATH]/typescript/lib"}
