@@ -98,8 +98,8 @@
 .edit_area{
     position: relative;
     top: 10%;
-    left: 10%;
-    width: 80%;
+    left: 0%;
+    width: 200%;
     height: 50%;
 }
 
@@ -115,9 +115,9 @@
 }
 
 .close_popup {
-    position: relative;
-    top: 65%;
-    left: -35%;
+    position: absolute;
+    bottom: 8px;
+    left: 135px;
     height: 30px;
     width: 50px;
     border: 1px solid #dee2e6;
