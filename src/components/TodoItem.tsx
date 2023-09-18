@@ -1,10 +1,17 @@
 import React from "react";
 import cn from "classnames";
+import { item } from "../interface/todoInterface";
 
-function TodoItem({todo, onRemove, onToggle, onInsertToggle, onChangeSelectTodo}) {
+export const TodoItem = ({todo, onRemove, onToggle, onInsertToggle, onChangeSelectTodo}: {
+    todo: item,
+    onRemove: Function,
+    onToggle: Function,
+    onInsertToggle: Function,
+    onChangeSelectTodo: Function
+}) => {
     const { id, text, checked } = todo;
 
-    const checkRM = (id) => {
+    const checkRM = (id: number) => {
         if(window.confirm('삭제 하시겠습니까?')){
             onRemove(id)
         }
@@ -22,5 +29,3 @@ function TodoItem({todo, onRemove, onToggle, onInsertToggle, onChangeSelectTodo}
         </div>
     );
 }
-
-export default TodoItem;

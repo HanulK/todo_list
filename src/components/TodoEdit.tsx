@@ -1,6 +1,11 @@
 import React, {useCallback, useEffect, useState} from "react";
+import { item } from "../interface/todoInterface";
 
-function TodoEdit({onInsertToggle, selectTodo, onUpdate}) {
+export const TodoEdit = ({onInsertToggle, selectTodo, onUpdate}: {
+                            onInsertToggle: Function,
+                            selectTodo: item,
+                            onUpdate: Function}) => 
+{
     const [text, setText] = useState<string>('');
 
     const onSubmit = useCallback<(e: React.FormEvent) => void>( e => {
@@ -26,10 +31,8 @@ function TodoEdit({onInsertToggle, selectTodo, onUpdate}) {
                     <input className="edit_text" value={text} placeholder="수정 사항을 입력하세요." onChange={(e) => {setText(e.target.value)}}></input>
                     <button type="submit" className="btn">수정</button>
                 </div>
-                <button className="close_popup" onClick={() => onInsertToggle()}>닫기</button>
+                <button type="button" className="close_popup" onClick={() => onInsertToggle()}>닫기</button>
             </form>
         </div>
     );
 }
-
-export default TodoEdit;

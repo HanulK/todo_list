@@ -1,13 +1,11 @@
 import React, { useState, useRef, useCallback } from "react";
-import TodoCreate from "./components/TodoCreate";
 import './App.css';
-import TodoBoard from "./components/TodoBoard";
-import TodoEdit from "./components/TodoEdit";
+import { item } from "./interface/todoInterface";
+import { TodoCreate } from "./components/TodoCreate";
+import { TodoEdit } from "./components/TodoEdit";
+import { TodoBoard } from "./components/TodoBoard";
 
 function App() {
-    // 기본값 설정
-    // const [todos, setTodos] = useState([]);
-    type item = {id: number; text: string; checked: boolean};
     const [todos, setTodos] = useState<item[]>([]);
 
     // TodoCreate 안의 onSubmit 함수 안에서 재사용
@@ -27,18 +25,18 @@ function App() {
     );
 
     // TodoItem 안의 checkRM 함수(id 값으로 선택된 item 제거) 안에서 재사용
-    const onRemove = useCallback(
+    const onRemove = useCallback<(id: number) => void>(
         (id) => {
-            setTodos(todos.filter((todo) => todo.id !== id));
+            setTodos(todos.filter((todo: item) => todo.id !== id));
         },
         [todos]
     );
 
     // TodoItem 안의 check_circle 클래스 선택 시 todos의 특정 id값을 가지는 item의 checked를 변경
-    const onToggle = useCallback(
+    const onToggle = useCallback<(id: number) => void>(
         (id) => {
             setTodos(
-                todos.map((todo) => 
+                todos.map((todo: item) => 
                 todo.id === id ? {...todo, checked: !todo.checked} : todo)
             )
         },
