@@ -1,9 +1,9 @@
 import React, {useCallback, useEffect, useState} from "react";
 
 function TodoEdit({onInsertToggle, selectTodo, onUpdate}) {
-    const [text, setText] = useState('');
+    const [text, setText] = useState<string>('');
 
-    const onSubmit = useCallback((e) => {
+    const onSubmit = useCallback<(e: React.FormEvent) => void>( e => {
         onUpdate(selectTodo.id, text);
         setText('');
         e.preventDefault();
